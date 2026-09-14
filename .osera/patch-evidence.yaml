@@ -1,0 +1,14 @@
+schema: osera-patch-evidence/0.1.0
+producer: controlplane-dev
+release: 1.33+osera-patch.001
+baseline: v1.33+patch.baseline
+fixes:
+  - cve: CVE-2022-1471
+    upstream: https://bitbucket.org/snakeyaml/snakeyaml/issues/561
+    note: dev rehearsal, the release flow is real, the jar is the upstream code rebuilt under the patched version
+tests:
+  commit: 60d3b45
+  command: mvn -B -DskipTests package
+  runtime: OpenJDK 21, Apache Maven 3.9.16
+  report: snakeyaml-1.33+osera-patch.001-tests.zip
+  result: pass
